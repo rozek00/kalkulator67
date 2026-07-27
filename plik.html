@@ -5,6 +5,16 @@
     <script>
         function calculate() {
             var output = document.getElementById("output");
+            if (output.innerHTML.trim() === "") {
+                output.innerHTML = "0";
+                return;
+            }
+            if(!output.innerHTML.includes("*") && !output.innerHTML.includes("/") && !output.innerHTML.includes("+") && !output.innerHTML.includes("-")) {
+                return;
+            }
+            if(output.innerHTML.endsWith("*") || output.innerHTML.endsWith("/") || output.innerHTML.endsWith("+") || output.innerHTML.endsWith("-")) {
+                return;
+            }
             output.innerHTML = "67";
         }
         function writeToOutput(value) {
